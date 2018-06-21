@@ -1,10 +1,7 @@
 package main;
-import java.util.Random;
+import java.lang.Math;
 
 public class Integral {
-	private static double a;
-	private static double b;
-	private static double c;
 	private static final int NEXP = 100000;
 	private static double f(double x) {
 		return x*x;
@@ -18,7 +15,7 @@ public class Integral {
 	public static double integralx2(double a, double b, double c) {
 		int cont=0;
 		for(int i=0;i<NEXP;i++) {
-			double x = Math.random();
+			double x = Math.random()*(b-a)+a;
 			double y = Math.random()*c;
 			if(y < f(x)) {
 				cont++;
@@ -28,9 +25,8 @@ public class Integral {
 	}
 	public static double integralcx3(double a, double b, double c) {
 		int cont=0;
-		System.out.println(h(c,1));
 		for(int i=0;i<NEXP;i++) {
-			double x = Math.random();
+			double x = Math.random()*(b-a)+a;
 			double y = Math.random()*c;
 			if(y < h(c, x)) {
 				cont++;
