@@ -23,6 +23,9 @@ public class Integral {
 		}
 		return (double) cont/NEXP*(b-a)*c;
 	}
+	public static double integralfx(double a, double b, Funcao fx){
+
+    }
 	public static double integralcx3(double a, double b, double c) {
 		int cont=0;
 		for(int i=0;i<NEXP;i++) {
