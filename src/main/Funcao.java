@@ -1,14 +1,18 @@
 package main;
 
-public class Funcao {
-    private double x;
-    private String def;
-    public Funcao(String def, double x){
+public abstract class Funcao {
+    protected double x;
+    protected double c;
+    public Funcao(double c, double x){
         this.x=x;
-        this.def=def;
+        this.c=c;
+    }
+    public Funcao(double c){
+        this.c=c;
     }
 
-    public double eval(){
-
-    }
+    public abstract double eval();
+    public abstract double getCoeficiente();
+    public abstract double getVariavel();
+    public abstract void setVariavel(double x);
 }

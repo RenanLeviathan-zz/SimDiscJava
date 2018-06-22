@@ -24,7 +24,17 @@ public class Integral {
 		return (double) cont/NEXP*(b-a)*c;
 	}
 	public static double integralfx(double a, double b, Funcao fx){
-
+		int cont=0;
+		double c = fx.eval();
+		for(int i=0;i<NEXP;i++){
+		    double x = Math.random()*(b-a)+a;
+		    double y = Math.random()*c;
+		    fx.setVariavel(x);
+		    if(y < fx.eval()){
+		        cont++;
+            }
+        }
+        return (double) cont/NEXP*(b-a)*c;
     }
 	public static double integralcx3(double a, double b, double c) {
 		int cont=0;
